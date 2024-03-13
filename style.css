@@ -1,18 +1,12 @@
+/*----------헤더영역----------*/
 header {
-  position:sticky;
-  top: 0;
-  left: 0;
+  position:sticky; /*fixed와 다르게 영역구분 가능*/
   width: 100%; /* 화면의 가로 전체를 차지하도록 설정 */
-  z-index: 1000;
+  z-index: 1000; /*다른 영역보다 위에표시*/
 }
 
-h1 {
-  background-color:lightslategray;
-}
-
-
-.navbar img {
-  height: 40px; /* 로고 이미지 높이 */
+.navbar img { /* 심볼로고 이미지 */
+  height: 40px;
 }
 
 .navbar .nav-item :hover {
@@ -20,33 +14,33 @@ h1 {
 }
 
 .navbar a {
-  padding: 8px;
+  padding: 8px; /*a태그 끼리 간격 주기*/
 }
 
-.slider {
-  position: relative;
-  overflow: hidden;
+main .container {
+  background-color:seashell;
+}
+
+/*----------슬라이더 영역----------*/
+.slider,
+.slide img {
   width: 1320px;
   height: 700px;
+  position: relative;
+  overflow: hidden; /*위치,넓이 넘어가는 부분 숨기기*/
 }
 
+/*슬라이드 설정*/
 .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: absolute; /*절대 위치 지정*/
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-
   animation: slider 8s infinite normal linear;
 }
 
-.slide img {
-  width: 1320px;
-  height: 700px;
-}
-
+/*--슬라이드 시간 설정--*/
 .slide:nth-child(1) {
   animation-delay: 0;
 }
@@ -60,26 +54,27 @@ h1 {
   animation-delay: -6s;
 }
 
-.slide h2 {
+.slide h2 { /*큰 텍스트*/
   position: absolute; /* 절대 위치 지정 */
   bottom: 50%;
   left: 50%;
   transform: translateX(-50%); /* 가운데 정렬을 위한 트랜스폼 */
-  color: white; /* 텍스트 색상 */
-  background-color: rgba(0, 0, 0, 0.5); /* 텍스트 배경색 */
-  padding: 10px; /* 텍스트 내부 여백 */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
 }
 
-.slide p {
-  position: absolute;
+.slide p { /*작은 텍스트*/
+  position: absolute; /*절대 위치 지정*/
   bottom: 30%;
   left: 50%;
   transform: translateX(-50%); /* 가운데 정렬을 위한 트랜스폼 */
-  color: white; /* 텍스트 색상 */
-  background-color: rgba(0, 0, 0, 0.5); /* 텍스트 배경색 */
-  padding: 5px; /* 텍스트 내부 여백 */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
 }
 
+/*슬라이드 이동*/
 @keyframes slider {
   0% {
     transform: translateX(0);
@@ -101,19 +96,27 @@ h1 {
   }
 }
 
+h1 { /*영역 표시하는 백그라운드 컬러*/
+  background-color:lightslategray;
+  width: 100%;
+}
 /*----------information 영역----------*/
+
 .information {
-  background-color:seashell;
+  display: flex;
+  flex-direction: column;
 }
 
-.information a {
-  margin: 20px;
+.information-images___small_1 {
+  align-self: flex-start; /* 왼쪽 정렬 */
 }
 
-.information button {
-  padding: 20px;
-  font-size: 40px;
-  font-weight: 700;
+.information-images___small_2 {
+  align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.information-images___small_3 {
+  align-self: flex-start; /* 왼쪽 정렬 */
 }
 
 /*이미지 크기 설정*/
@@ -137,48 +140,38 @@ h1 {
   width: 1200px;
 }
 
+/*스크롤시 이미지가 나타나는 css*/
 @keyframes reveal {
   from { opacity: 0; clip-path: inset(0% 60% 0% 50%); }
   to { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
 }
 
+/*스크롤시 이미지가 나타나는 css*/
 .information-images___small_1,
 .information-images___small_2,
 .information-images___small_3,
 .information-images {
+  position: relative;
   animation: auto linear reveal both;
   animation-timeline: view();
   animation-range: entry 25% cover 50%;
-  position: relative;
 }
 
-.information h2 {
+.information h2 { /*이미지 속 텍스트*/
   position: absolute; /* 절대 위치 지정 */
   bottom: 50%;
   left: 50%;
   transform: translateX(-50%); /* 가운데 정렬을 위한 트랜스폼 */
   color: white; /* 텍스트 색상 */
-  background-color: rgba(0, 0, 0, 0.5); /* 텍스트 배경색 */
-  padding: 10px; /* 텍스트 내부 여백 */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
   width: 450px;
 }
 
-.information-images___small_1 h2 {
+/*첫번째 이미지속 텍스트 따로 넓이 늘리기*/
+.information-images___small_1 h2 { 
   bottom: 150px;
   width: 650px;
-}
-
-/*추가*/
-
-/* Flexbox를 사용하여 이미지 정렬 */
-.information {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.information h1 {
-  width: 100%;
 }
 
 .information-images___small_1 {
@@ -193,8 +186,15 @@ h1 {
   align-self: flex-start; /* 왼쪽 정렬 */
 }
 
-.information-images {
-  align-self: center; /* 가운데 정렬 */
+/*--서브페이지 이동버튼--*/
+.information a {
+  margin: 20px;
+}
+
+.information button {
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 /*----------game schedule 영역----------*/
@@ -263,8 +263,8 @@ h1 {
 }
 
 .calendar .days li::before {
-  position: absolute;
-  content: '';
+  position: absolute; /*절대 위치 지정*/
+  content: ''; /*오타아님*/
   height: 40px;
   width: 40px;
   top: 50%;
