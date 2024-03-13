@@ -1,0 +1,308 @@
+header {
+  position:sticky;
+  top: 0;
+  left: 0;
+  width: 100%; /* 화면의 가로 전체를 차지하도록 설정 */
+  z-index: 1000;
+}
+
+h1 {
+  background-color:lightslategray;
+}
+
+
+.navbar img {
+  height: 40px; /* 로고 이미지 높이 */
+}
+
+.navbar .nav-item :hover {
+  background-color: darkgoldenrod;
+}
+
+.navbar a {
+  padding: 8px;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 1320px;
+  height: 500px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  animation: slider 8s infinite normal linear;
+}
+
+.slide img {
+  width: 1320px;
+  height: 500px;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0;
+}
+.slide:nth-child(2) {
+  animation-delay: -2s;
+}
+.slide:nth-child(3) {
+  animation-delay: -4s;
+}
+.slide:nth-child(4) {
+  animation-delay: -6s;
+}
+
+.slide h2 {
+  position: absolute; /* 절대 위치 지정 */
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%); /* 가운데 정렬을 위한 트랜스폼 */
+  color: white; /* 텍스트 색상 */
+  background-color: rgba(0, 0, 0, 0.5); /* 텍스트 배경색 */
+  padding: 10px; /* 텍스트 내부 여백 */
+}
+
+.slide p {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%); /* 가운데 정렬을 위한 트랜스폼 */
+  color: white; /* 텍스트 색상 */
+  background-color: rgba(0, 0, 0, 0.5); /* 텍스트 배경색 */
+  padding: 5px; /* 텍스트 내부 여백 */
+}
+
+@keyframes slider {
+  0% {
+    transform: translateX(0);
+  }
+
+  19% {
+    transform: translateX(0); /* 19% 동안 화면(0)에 보여줌 */
+  }
+  25% {
+    transform: translateX(-100%); /* 6% 동안 화면(0%) -> 화면왼쪽(-100)으로 이동  */
+    animation-timing-function: step-end; /*100% 는 순간이동 시킴*/
+  }
+  94% {
+    transform: translateX(100%); /* 화면오른쪽(100)으로 순간이동 */
+  }
+
+  100% {
+    transform: translateX(0); /* 6% 동안 화면왼쪽(100) -> 화면(0)으로 이동 */
+  }
+}
+
+/*----------information 영역----------*/
+.information img{
+  height: 450px;
+  width: 450px;
+}
+
+/*----------game schedule 영역----------*/
+
+/* 전체적인 구조 */
+.calendar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid black;
+}
+
+/* 내비게이션 스타일 */
+.wrapper .calendar-nav {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid black;
+}
+
+.wrapper .calendar-nav .month {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* 캘린더 스타일 */
+.calendar ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0;
+}
+
+.calendar .weeks li {
+  font-weight: 500;
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+}
+
+.calendar ul li {
+  width: calc(100% / 7);
+  position: relative;
+}
+
+.calendar .days li {
+  z-index: 1;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.days li.inactive {
+  color: #aaa;
+}
+
+.days li.active {
+  color: #fff;
+}
+
+.calendar .days li::before {
+  position: absolute;
+  content: '';
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.days li:hover::before {
+  background: #f2f2f2;
+}
+
+/* 모달 스타일 */
+#modal {
+  display: none;
+  position: fixed;
+  width: 500px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  z-index: 99;
+}
+
+#modal:target {
+  display: block;
+  animation: modal 1s ease;
+}
+
+.box {
+  width: 350px;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+.box p {
+  background-color: seagreen;
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.close a {
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+}
+
+
+/*----------ranking 영역----------*/
+.accordion {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+input[id*=answer] {
+  display: none;
+}
+input[id*="answer"] + label {
+  display: block;
+  padding: 20px;
+  border: 1px solid #232188;
+  border-bottom: 0;
+  color: #fff;
+  background-color:darkgray;
+  cursor: pointer;
+  position: relative;
+  font-size: 24px;
+}
+
+input[id*="answer"] + label i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  display: inline-block;
+}
+
+input[id*="answer"] + label + div {
+  max-height: 0;
+  transition: all .35s;
+  overflow: hidden;
+  background: #ebf8ff;
+  font-size: 12px;
+}
+
+input[id*="answer"] + label + div p {
+  display: inline-block;
+  padding: 20px;
+  font-size: 20px;
+}
+
+input[id*="answer"]:checked + label + div {
+  max-height: 100px;
+}
+
+input[id*="answer"]:checked + label i {
+  background-position: 0 -30px;
+}
+
+/*----------gallery 영역----------*/
+
+/*----------goods 영역----------*/
+.goods img {
+  height: 300px;
+  width: 450px;
+}
+
+footer i {
+  margin-left: 50px;
+}
+footer img {
+  width: 32px;
+  height: 30px; /* 로고 이미지 높이 */
+}

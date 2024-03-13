@@ -1,0 +1,178 @@
+/* Global */
+@font-face {
+    /*instagram*/
+    font-family: "insta";
+    src: url("/font/billabong.otf") format("opentype");
+  }
+  @font-face {
+    /*bemin*/
+    font-family: "bemin";
+    src: url("/font/BMJUA_ttf.ttf") format("truetype");
+  }
+  @font-face {
+    /*Disney*/
+    font-family: "disney";
+    src: url("/font/WaltDisney+Font.ttf") format("truetype");
+  }
+  @font-face {
+    /*Sans*/
+    font-family: "sans";
+    src: url("Neo Sans Pro.ttf") format("truetype");
+  }
+  
+  :root {
+    --black: #252525;
+    --blue: #5383c4;
+    --background: #f9f9f9;
+    --border: #dbdbdb;
+  }
+  
+  /*CSS RESET*/
+  * {
+    box-sizing: border-box;
+  }
+  ul, li{list-style: none;}
+  html,
+  body,
+  div,
+  span,
+  object,
+  iframe,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+  body {
+    line-height: 1;
+  }
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  nav ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+  ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+  }
+  mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  abbr[title],
+  dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+  input,
+  select {
+    vertical-align: middle;
+  }
+  
