@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
-  <link rel="stylesheet" href="space_reset.css">
 </head>
 
 <body>
@@ -19,7 +18,7 @@
         <!--로고-->
         <a class="navbar-brand" href="#"><img src="logo.png" alt="로고"></a>
         <!--네비게이션-->
-        <ul class="navbar">
+        <ul class="navbar m-0">
           <li class="nav-item">
             <a class="nav-link" href="#">Information</a>
           </li>
@@ -34,12 +33,14 @@
           </li>
         </ul>
         <!--로그인과 회원가입-->
-        <div class="navbar">
+        <ul class="navbar m-0">
           <li>
-            <a href="#" class="nav-link">로그인</a>
+            <a class="nav-link" href="#">로그인</a>
           </li>
-          <li><a href="#" class="nav-link">회원가입</a></li>
-        </div>
+          <li>
+            <a class="nav-link" href="#">회원가입</a>
+          </li>
+        </ul>
 
       </div>
     </nav>
@@ -192,14 +193,14 @@
           <h2>금일 게임 현황</h2>
           <div class="team_container">
             <div class="team_img_1">
-              <img src="대지 1.png" alt="">
+              <img src="team_WEB.png" alt="">
               <p>5</p>
             </div>
             <div class="team_vs">
               <span>vs</span>
             </div>
             <div class="team_img_2">
-              <img src="design.png" alt="">
+              <img src="team_design.png" alt="">
               <p>4</p>
             </div>
           </div>
@@ -209,12 +210,20 @@
       <!----------랭킹 영역---------->
       <div class="ranking">
         <h1>ranking</h1>
-        <select name="" id="">
-          <option value="">리그 선택</option>
-          <option value="">나이트리그</option>
-          <option value="">주말리그</option>
-          <option value="">새벽리그</option>
+        <select name="league" id="league">
+          <option value=""">리그 선택</option>
+          <option value="night">나이트 리그</option>
+          <option value="weekend">주말 리그</option>
+          <option value="dawn">새벽 리그</option>
         </select>
+
+        <select name="position" id="position">
+          <option value="">포지션 선택</option>
+          <option value="pitcher">투수</option>
+          <option value="batter">타자</option>
+        </select>
+
+        <button>선택</button>
         <!--투수 순위-->
         <div class="pitcher">
           <h2>투수 순위</h2>
@@ -283,14 +292,14 @@
   <!--푸터-->
   <footer class="bg-dark text-white py-4 text-center">
     <img src="logo.png" alt="로고">
-    <i class="fa-brands fa-instagram fa-2x"></i>
-    <i class="fa-brands fa-facebook fa-2x"></i>
-    <i class="fa-brands fa-github fa-2x"></i>
+    <a href="#" style="color: white;"><i class="fa-brands fa-instagram fa-2x"></i></a>
+    <a href="#" style="color: white;"><i class="fa-brands fa-facebook fa-2x"></i></a>
+    <a href="#" style="color: white;"><i class="fa-brands fa-github fa-2x"></i></a>
     <p>&copy; 2024 Skills Baseball Park. All rights reserved.</p>
     <p>Call: 142-3677</p>
     <p>Email: help@skillsbaseballpark.com</p>
-    <p>Address: (12345) 서울특별서 중구 중북로 71</p>
-
+    <p class="m-0">Address: (12345) 서울특별서 중구 중북로 71</p>
   </footer>
+
 </body>
 </html>

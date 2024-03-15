@@ -1,4 +1,5 @@
-ul li {
+/*전체부분*/
+li {
   list-style: none;
 }
 
@@ -355,6 +356,7 @@ h1 { /*영역 표시하는 백그라운드 컬러*/
 }
 
 /*----------ranking 영역----------*/
+
 .accordion {
   margin-left: 300px;
   margin-right: 300px;
@@ -423,8 +425,9 @@ footer img {
   height: 30px; /* 로고 이미지 높이 */
 }
 
-/**/
-.intro___content img {
-  height: 400px;
-  width: 100%;
+/*서브 페이지*/
+
+.intro img {
+  width: 1320px;
+  height: 500px;
 }
