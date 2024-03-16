@@ -6,20 +6,20 @@ li {
 /*----------헤더영역----------*/
 header {
   position:sticky; /*fixed와 다르게 영역구분 가능*/
+  top: 0; /*이걸써야 따라옴*/
   width: 100%; /* 화면의 가로 전체를 차지하도록 설정 */
   z-index: 1000; /*다른 영역보다 위에표시*/
 }
 
-.navbar img { /* 심볼로고 이미지 */
-  height: 40px;
-}
-
 .navbar .nav-item :hover {
-  background-color: darkgoldenrod;
+  background-color: #F48221;
+  transition: border-radius 0.3s;
+  border-radius: 50%;
 }
 
 .navbar a {
   padding: 8px; /*a태그 끼리 간격 주기*/
+  margin: 0 8px;
 }
 
 main .container {
@@ -417,12 +417,21 @@ input[id*="answer"]:checked + label i {
   width: 450px;
 }
 
+.goods {
+  padding-bottom: 100px;
+}
+
+/*----------푸터영역----------*/
 footer i {
   margin-left: 50px;
 }
-footer img {
-  width: 32px;
-  height: 30px; /* 로고 이미지 높이 */
+
+.icon a {
+  text-decoration: none;
+}
+
+.border___row {
+  border-bottom: 1px solid white;
 }
 
 /*서브 페이지*/
